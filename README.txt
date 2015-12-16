@@ -20,12 +20,30 @@ This program was developed in and is best illustrated in the form of an iPython 
 The text file here contains the necessary information to run any of the functions include
 in the attached .py files, but please visit the notebook hosted here:
 
+https://github.com/connordurkin/CPSC_458/blob/master/final_project.ipynb
 
+This is what I have submitted:
 
+- README.txt
 
+- final_project.html -an html version of the iPython notebook for easy viewing 
+
+- final_project_py2.py -python 2 version of final project functions (no executing code)
+
+- final_project_py3.py -python 3 version of final project functions (no executing code)
+
+Runtimes for the files are somewhat lengthy, so the notebook is best for viewing results.
+
+DEPENDENCIES:
+
+yahoo_finance
+numpy
+pandas
+matplotlib
+datetime
+cvxopt
 
 ********************************************
-
 
 --------------------------------------------
 getTimeSeries( ticker, start_date, end_date) 
