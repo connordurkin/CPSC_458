@@ -11,7 +11,21 @@ explain their motivations to a human being--hopefully in a palatable manner. Bel
 are the function definitions and at the end of the notebook you will find an example 
 of their use. These functions were written with default key values but the operations 
 are general enough to apply this strategy to any selection of securities with return 
-data available via yahoo finance. 
+data available via yahoo finance. Be sure to read the **Results and Analysis** at the end!
+
+********************************************
+A NOTE ABOUT MY SUBMISSION (PLEASE READ):
+
+This program was developed in and is best illustrated in the form of an iPython notebook.
+The text file here contains the necessary information to run any of the functions include
+in the attached .py files, but please visit the notebook hosted here:
+
+
+
+
+
+********************************************
+
 
 --------------------------------------------
 getTimeSeries( ticker, start_date, end_date) 
@@ -132,5 +146,25 @@ Below is an example from 2012-2013.
  Returns:
 * nothing
 
+--------------------
+Results and Analysis
+--------------------
+Here are my thoughts on these areas which could lead to improvement:
+
+**Transaction Costs**:
+
+Hooray! We made money! Alas, perhaps this is not the case. There are a number of shortcomings in the design and implementation of this program. Namely, I set out to build a strategy which actually optimized the mean-variance problem that considers transaction costs. This proved to be immensely difficult while keeping the program in quadratic form. More involved methods or a bit of cleverness that escapes me would be necessary to get this strategy working. However, we can still see that the strategy generally works after transaction costs have been added. That being said, my model of transaction costs is very simplistic and more detail here could have large impacts on the algorithm's performance. 
+
+**Universe Selection**:
+
+My universe selection of ETFs was not actually thought of for any particular reason other than the fact that they seemed safe--for this reason I am willing to say that the performance of the algorithm is on its own merit as opposed to my biased selection of securities for it to trade.
+
+**Erratic Trading**:
+
+If the DataFrame of portfolio weights overtime is looked at carefully it is clear that the algorithm trades rather erratically. That is to say, a marginal increase in one security's expected returns leads to the algorithm shifting nearly the entire portfolio into that one security. This flys in the face of diversification and seems to me like bad practice. This could be rectified for building in a penalization for portfolio movement into the optimization problem, but once again this problematizes keeping the optimization quadratic. More complex optimization techniques could be employed or simply adding an ad hoc dampning factor may have interesting results. 
+
+**Predicting the Future**: 
+
+I had initially set out to apply a complex ARIMA or other model in order to determine the next expected returns. As I explored the topic further I came to realize that the Markowitz method does not really rely on perfect analysis of the next prices, instead the beauty comes from it's emphasis of variance. For this reason I opted not to invest much time in developing this portion of the strategy.
 
 
