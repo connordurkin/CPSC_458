@@ -251,8 +251,8 @@ After factoring in commission fees of {3} the total return was:
     plt.show()
     return
 
-weights_df, total_returns, naive_return = backtest(start_date ='2012-01-01', end_date = '2012-02-01')
-analyzeResults( weights_df, total_returns, naive_return, commission = .0004)
+# weights_df, total_returns, naive_return = backtest(start_date ='2012-01-01', end_date = '2012-02-01')
+# analyzeResults( weights_df, total_returns, naive_return, commission = .0004)
 
 # Results and Analysis
 # -------------------
